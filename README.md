@@ -1,4 +1,4 @@
-# FS22 Weezl's Mod Lib
+# Weezl's Mod Lib for Farming Simulator 22
 
 This library contains quality of life functions to ease development of script (LUA) based mods for Farming Simulator 22 (FS22).
 
@@ -9,8 +9,46 @@ I love to hear you feedback so please check out my [Facebook](https://www.facebo
 
 
 ## Contents/features
-* TBD
+* [ModHelper](#modhelper) - A base class/bootstrapper for any script based mod
+* **LogHelper** - Quality of life class/library for logging and debugging
+* **DebugHelper** - Extension to the LogHelper that is particularly useful when debugging
+* **FillTypeManagerExtension** - Extension class to the FillTypeManager that enables your mod to add custom fill types and height types (material that can be dumped to ground) 
 
-## Want to report a bug or have a great idea?
-Please check out my [project page](https://go.xilent.se/wzl-modding-projects) to get more details about the my projects or post bug reports/feature requests. Here you will also find information about known issues, tips on workarounds and occationally also hotfixes.
+## ModHelper
 
+#### 1. Copy the `"lib"` folder to the root folder of your mod
+
+#### 2. Create a script file (if you haven't already), e.g. *"YourModName.lua"*, with the following content:
+```lua
+YourModName = Mod:init() -- "YourModName" is your actual mod object/instance, ready to use
+```
+
+#### 3 .Add this line to the `<extraSourceFiles>` section of your *ModDesc.xml* file:
+```xml
+<sourceFile filename="lib/ModHelper.lua" />
+```
+
+It shoud look something like this:
+```xml
+<extraSourceFiles>
+    <sourceFile filename="lib/ModHelper.lua" />
+    <sourceFile filename="YourModName.lua" />
+</extraSourceFiles>
+```
+
+#### 4. Now your mod is ready to be used, e.g. you could att these lines to "YourModName.lua" to print a text when your mod is loaded:
+
+```lua
+function YourModName:loadMap(filename) 
+    print("Mod loaded")
+end
+```
+
+Some more events that can be used similar to loadMap:
+* `loadMapFinished()` - Directly after the map has finished loading (and before `loadMap`)
+* `startMission()` - When user selects "Start"
+* `update(dt)` - Looped as long game is running
+
+### Additional features
+
+* Built-in automatic support to read and write user settings
