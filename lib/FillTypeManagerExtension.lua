@@ -4,7 +4,7 @@ FillType Manager Extesion (Weezls Mod Lib for FS22) - Simplifies the process of 
 
 Author:     w33zl
 Version:    0.9.2
-Modified:   2021-12-08
+Modified:   2022-02-27
 
 Facebook:           https://www.facebook.com/w33zl
 Ko-fi:              https://ko-fi.com/w33zl
@@ -16,11 +16,10 @@ v1.0        Initial public release (TBD)
 v0.9        Internal beta release
 
 
-COPYRIGHT:  
-You may not redistribute and/or share modified versions of the script unless you have explicit permission from the author (i.e. me).
+COPYRIGHT:
+You may not redistribute the script, in original or modified state, unless you have explicit permission from the author (i.e. w33zl).
 
-Contact me (WZL Modding) on Facebook and I -will- grant you permission to use the script! I just want to know by who and how the script is being used.
-
+However, contact me (WZL Modding) on Facebook and I -will- happily grant you permission to use and redistribute the script! I just want to know how, and by who, the script is being used <3
 ]]
 
 assert(Log, "The dependency 'Log' from WeezlsModLibrary was not found!")
