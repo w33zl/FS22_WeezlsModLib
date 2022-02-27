@@ -31,7 +31,7 @@ YourModName = Mod:init() -- "YourModName" is your actual mod object/instance, re
 It shoud look something like this:
 ```xml
 <extraSourceFiles>
-    <sourceFile filename="lib/ModHelper.lua" />
+    <sourceFile filename="lib/ModHelper.lua" /><!-- Must be above your mod lua file -->
     <sourceFile filename="YourModName.lua" />
 </extraSourceFiles>
 ```
@@ -45,7 +45,7 @@ end
 ```
 
 Some more events that can be used similar to loadMap:
-* `loadMapFinished()` - Directly after the map has finished loading (and before `loadMap`)
+* `loadMapFinished()` - Directly after the map has finished loading (and before *loadMap*)
 * `startMission()` - When user selects "Start"
 * `update(dt)` - Looped as long game is running
 
